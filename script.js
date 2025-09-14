@@ -74,10 +74,10 @@ window.addEventListener('scroll', function() {
 function typeWriter() {
     const textElement = document.querySelector('#typing-text');
     const texts = [
-        'Full-Stack Web Developer',
-        'UI/UX Enthusiast', 
-        'Tech Innovation Advocate',
-        'Creative Problem Solver'
+        'Full-Stack Developer',
+        'Cross-Platform Developer', 
+        'Data Science Enthusiast',
+        'Firebase Specialist'
     ];
     
     let textIndex = 0;
@@ -117,9 +117,6 @@ function typeWriter() {
         type();
     }, 1000);
 }
-
-// Initialize typing animation
-typeWriter();
 
 // Scroll Animations
 const observerOptions = {
@@ -163,29 +160,28 @@ window.addEventListener('scroll', function() {
 
 // Contact Form Handling
 document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
     // Get form data
     const formData = new FormData(this);
     const name = formData.get('name');
-    const email = formData.get('email');
+    const email = formData.get('_replyto');
     const subject = formData.get('subject');
     const message = formData.get('message');
     
     // Simple validation
     if (!name || !email || !subject || !message) {
+        e.preventDefault();
         showNotification('Please fill in all fields', 'error');
         return;
     }
     
     if (!isValidEmail(email)) {
+        e.preventDefault();
         showNotification('Please enter a valid email address', 'error');
         return;
     }
     
-    // Simulate form submission
-    showNotification('Thank you for your message! I\'ll get back to you soon.', 'success');
-    this.reset();
+    // Show success message and let form submit naturally to Formspree
+    showNotification('Sending message...', 'info');
 });
 
 // Email validation
@@ -309,7 +305,7 @@ animateCounters();
 // Theme Toggle (Optional Enhancement)
 function createThemeToggle() {
     const themeToggle = document.createElement('button');
-    themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+    themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
     themeToggle.className = 'theme-toggle';
     themeToggle.style.cssText = `
         position: fixed;
@@ -330,6 +326,24 @@ function createThemeToggle() {
     
     document.body.appendChild(themeToggle);
     
+    // Check for saved theme preference or default to dark
+    const currentTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    
+    // Update icon based on current theme
+    updateThemeIcon(themeToggle, currentTheme);
+    
+    themeToggle.addEventListener('click', function() {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(this, newTheme);
+        
+        showNotification(`Switched to ${newTheme} mode`, 'info');
+    });
+    
     themeToggle.addEventListener('mouseenter', function() {
         this.style.transform = 'scale(1.1)';
     });
@@ -337,6 +351,10 @@ function createThemeToggle() {
     themeToggle.addEventListener('mouseleave', function() {
         this.style.transform = 'scale(1)';
     });
+}
+
+function updateThemeIcon(button, theme) {
+    button.innerHTML = theme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
 }
 
 // Initialize theme toggle
@@ -424,6 +442,29 @@ document.addEventListener('DOMContentLoaded', function() {
     if (nameElement) {
         nameElement.addEventListener('mouseenter', function() {
             this.style.animation = 'glitch 0.3s ease';
+        });
+    }
+    
+    // Email copy functionality
+    const copyEmailBtn = document.getElementById('copyEmail');
+    if (copyEmailBtn) {
+        copyEmailBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const email = 'uriahadeniran065@gmail.com';
+            
+            // Copy to clipboard
+            navigator.clipboard.writeText(email).then(function() {
+                showNotification('Email address copied to clipboard!', 'success');
+            }).catch(function() {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = email;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                showNotification('Email address copied to clipboard!', 'success');
+            });
         });
     }
 });

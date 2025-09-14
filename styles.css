@@ -18,6 +18,45 @@
     --text-grey: #9CA3AF;
 }
 
+/* Light Theme */
+[data-theme="light"] {
+    --dark-black: #FFFFFF;
+    --light-black: #F8FAFC;
+    --grey-black: #E2E8F0;
+    --text-white: #1A202C;
+    --text-light: #2D3748;
+    --text-grey: #4A5568;
+}
+
+/* Light theme navbar */
+[data-theme="light"] .navbar {
+    background: rgba(248, 250, 252, 0.95);
+    border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+}
+
+/* Light theme cards and sections */
+[data-theme="light"] .project-card,
+[data-theme="light"] .skill-category,
+[data-theme="light"] .about-card,
+[data-theme="light"] .contact-form,
+[data-theme="light"] .profile-card {
+    background: linear-gradient(135deg, #F8FAFC, #E2E8F0);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .stat-item,
+[data-theme="light"] .skill-item,
+[data-theme="light"] .contact-method {
+    background: rgba(139, 92, 246, 0.1);
+}
+
+[data-theme="light"] .form-group input,
+[data-theme="light"] .form-group textarea {
+    background: rgba(139, 92, 246, 0.05);
+    color: var(--text-white);
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -259,6 +298,21 @@ body {
 .profile-img {
     text-align: center;
     margin-bottom: 1rem;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--primary-purple);
+    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+    transition: all 0.3s ease;
+}
+
+.profile-picture:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(139, 92, 246, 0.4);
 }
 
 .profile-img i {
