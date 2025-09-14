@@ -72,12 +72,12 @@ window.addEventListener('scroll', function() {
 
 // Typing Animation for Hero Section
 function typeWriter() {
-    const textElement = document.querySelector('.hero-text h2');
+    const textElement = document.querySelector('#typing-text');
     const texts = [
-        'Junior Developer & Creative Problem Solver',
         'Full-Stack Web Developer',
-        'UI/UX Enthusiast',
-        'Tech Innovation Advocate'
+        'UI/UX Enthusiast', 
+        'Tech Innovation Advocate',
+        'Creative Problem Solver'
     ];
     
     let textIndex = 0;
@@ -112,7 +112,10 @@ function typeWriter() {
     }
 
     // Start typing animation after page load
-    setTimeout(type, 1000);
+    setTimeout(() => {
+        textElement.textContent = '';
+        type();
+    }, 1000);
 }
 
 // Initialize typing animation
