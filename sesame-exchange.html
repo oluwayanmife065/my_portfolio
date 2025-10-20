@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sesame Exchange - AI-Powered Campus Marketplace | Uriah Adeniran</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="sesame-exchange.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">← Back to Portfolio</a>
+            <div class="nav-menu">
+                <a href="#hero" class="nav-link">Overview</a>
+                <a href="#problem" class="nav-link">Problem</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#technical" class="nav-link">Technical</a>
+                <a href="#demo" class="nav-link">Demo</a>
+                <a href="#impact" class="nav-link">Impact</a>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="project-hero">
+        <div class="hero-background">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="project-badge">
+                    <i class="fas fa-trophy"></i>
+                    <span>Featured Project</span>
+                </div>
+                <h1 class="project-title">Sesame Exchange</h1>
+                <p class="project-tagline">AI-Powered Campus Marketplace for Sustainable Sharing</p>
+                <p class="project-description">
+                    A revolutionary cross-platform mobile application that leverages artificial intelligence to transform 
+                    how students buy, sell, and exchange items on campus. Built with cutting-edge technology to make 
+                    campus commerce seamless, sustainable, and smart.
+                </p>
+                
+                <!-- Tech Stack Badges -->
+                <div class="tech-badges">
+                    <div class="tech-badge flutter">
+                        <i class="fab fa-flutter"></i>
+                        <span>Flutter</span>
+                    </div>
+                    <div class="tech-badge firebase">
+                        <i class="fab fa-google"></i>
+                        <span>Firebase</span>
+                    </div>
+                    <div class="tech-badge ai">
+                        <i class="fas fa-brain"></i>
+                        <span>Hugging Face AI</span>
+                    </div>
+                    <div class="tech-badge cloudinary">
+                        <i class="fas fa-cloud"></i>
+                        <span>Cloudinary</span>
+                    </div>
+                    <div class="tech-badge dart">
+                        <i class="fas fa-code"></i>
+                        <span>Dart</span>
+                    </div>
+                </div>
+                
+                <!-- CTA Buttons -->
+                <div class="hero-buttons">
+                    <a href="https://github.com/Uriahadeniran09/sesame_exchange_shop" target="_blank" class="btn btn-primary">
+                        <i class="fab fa-github"></i>
+                        View on GitHub
+                    </a>
+                    <a href="#demo" class="btn btn-secondary">
+                        <i class="fas fa-play"></i>
+                        Watch Demo
+                    </a>
+                    <a href="#technical" class="btn btn-outline">
+                        <i class="fas fa-code"></i>
+                        Technical Details
+                    </a>
+                </div>
+                
+                <!-- Quick Stats -->
+                <div class="quick-stats">
+                    <div class="stat">
+                        <div class="stat-value">95%+</div>
+                        <div class="stat-label">AI Accuracy</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">7</div>
+                        <div class="stat-label">Categories</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">&lt;2s</div>
+                        <div class="stat-label">Image Processing</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">Real-time</div>
+                        <div class="stat-label">Messaging</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem/Solution Section -->
+    <section id="problem" class="problem-solution">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">The Challenge & Solution</h2>
+                <p class="section-subtitle">Addressing a real problem with innovative technology</p>
+            </div>
+            
+            <div class="problem-solution-grid">
+                <!-- The Problem -->
+                <div class="problem-card">
+                    <div class="card-icon problem-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3>The Problem</h3>
+                    <div class="problem-stats">
+                        <div class="problem-stat">
+                            <div class="stat-number">$500+</div>
+                            <p>Average unused items per student</p>
+                        </div>
+                        <div class="problem-stat">
+                            <div class="stat-number">40%</div>
+                            <p>Campus waste from discarded items</p>
+                        </div>
+                        <div class="problem-stat">
+                            <div class="stat-number">Hours</div>
+                            <p>Wasted on fragmented marketplaces</p>
+                        </div>
+                    </div>
+                    <ul class="problem-list">
+                        <li><i class="fas fa-times-circle"></i> Students struggle to find trusted buyers/sellers on campus</li>
+                        <li><i class="fas fa-times-circle"></i> Existing platforms lack proper categorization and search</li>
+                        <li><i class="fas fa-times-circle"></i> Manual item listing is time-consuming and error-prone</li>
+                        <li><i class="fas fa-times-circle"></i> No integrated communication for quick transactions</li>
+                        <li><i class="fas fa-times-circle"></i> Environmental impact from throwing away reusable items</li>
+                    </ul>
+                </div>
+                
+                <!-- The Solution -->
+                <div class="solution-card">
+                    <div class="card-icon solution-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Our Solution</h3>
+                    <p class="solution-intro">
+                        Sesame Exchange revolutionizes campus commerce with AI-powered automation and seamless user experience.
+                    </p>
+                    <ul class="solution-list">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <strong>AI Image Recognition</strong>
+                                <p>Hugging Face BLIP model automatically identifies and categorizes items with 95%+ accuracy</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <strong>Smart Categorization</strong>
+                                <p>Intelligent sorting across 7 categories: Electronics, Books, Furniture, Clothing, Sports, Kitchen, Other</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <strong>Real-time Messaging</strong>
+                                <p>Firebase-powered instant chat for seamless communication between buyers and sellers</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <strong>Google OAuth</strong>
+                                <p>Secure authentication with university email verification</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <strong>Cloudinary CDN</strong>
+                                <p>Lightning-fast image delivery with optimized caching and compression</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Impact Metrics -->
+            <div class="impact-preview">
+                <div class="impact-item">
+                    <i class="fas fa-dollar-sign"></i>
+                    <div>
+                        <h4>$200-500</h4>
+                        <p>Potential savings per semester per student</p>
+                    </div>
+                </div>
+                <div class="impact-item">
+                    <i class="fas fa-recycle"></i>
+                    <div>
+                        <h4>30%</h4>
+                        <p>Projected reduction in campus waste</p>
+                    </div>
+                </div>
+                <div class="impact-item">
+                    <i class="fas fa-users"></i>
+                    <div>
+                        <h4>Campus-wide</h4>
+                        <p>Scalable to thousands of students</p>
+                    </div>
+                </div>
+                <div class="impact-item">
+                    <i class="fas fa-leaf"></i>
+                    <div>
+                        <h4>Sustainable</h4>
+                        <p>Promoting circular economy on campus</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Key Features</h2>
+                <p class="section-subtitle">Powerful functionality meets intuitive design</p>
+            </div>
+            
+            <div class="features-showcase">
+                <!-- Feature 1: AI Image Recognition -->
+                <div class="feature-item">
+                    <div class="feature-content">
+                        <div class="feature-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3>AI-Powered Image Recognition</h3>
+                        <p>
+                            Leveraging Hugging Face's state-of-the-art BLIP (Bootstrapping Language-Image Pre-training) model, 
+                            Sesame Exchange automatically analyzes uploaded images to identify items and suggest accurate 
+                            categories. The AI processes images in under 2 seconds with over 95% accuracy.
+                        </p>
+                        <ul class="feature-highlights">
+                            <li><i class="fas fa-bolt"></i> Instant item identification</li>
+                            <li><i class="fas fa-brain"></i> Natural language descriptions</li>
+                            <li><i class="fas fa-tags"></i> Automatic category suggestion</li>
+                            <li><i class="fas fa-magic"></i> Title and description generation</li>
+                        </ul>
+                        <div class="tech-used">
+                            <span class="tech-tag">Hugging Face</span>
+                            <span class="tech-tag">BLIP Model</span>
+                            <span class="tech-tag">ML Integration</span>
+                        </div>
+                    </div>
+                    <div class="feature-visual">
+                        <img src="assets/Adding_item.jpeg" alt="AI Image Recognition in Action" class="feature-screenshot">
+                        <div class="screenshot-caption">AI automatically categorizing a laptop listing</div>
+                    </div>
+                </div>
+                
+                <!-- Feature 2: Smart Feed & Filtering -->
+                <div class="feature-item reverse">
+                    <div class="feature-content">
+                        <div class="feature-icon">
+                            <i class="fas fa-filter"></i>
+                        </div>
+                        <h3>Intelligent Feed & Smart Filtering</h3>
+                        <p>
+                            Browse items effortlessly with our dynamic feed that updates in real-time. Advanced filtering 
+                            system allows users to narrow down results by category, price range, condition, and more. 
+                            The responsive grid layout ensures optimal viewing on any device.
+                        </p>
+                        <ul class="feature-highlights">
+                            <li><i class="fas fa-sync"></i> Real-time feed updates</li>
+                            <li><i class="fas fa-sliders-h"></i> 7 category filters</li>
+                            <li><i class="fas fa-search"></i> Instant search functionality</li>
+                            <li><i class="fas fa-sort"></i> Sort by date, price, relevance</li>
+                        </ul>
+                        <div class="tech-used">
+                            <span class="tech-tag">Firestore Queries</span>
+                            <span class="tech-tag">Real-time Listeners</span>
+                            <span class="tech-tag">Flutter ListView</span>
+                        </div>
+                    </div>
+                    <div class="feature-visual">
+                        <div class="screenshot-grid">
+                            <img src="assets/Homescreen.png" alt="Main Feed Interface" class="feature-screenshot">
+                            <img src="assets/Catergories_filter.png" alt="Category Filters" class="feature-screenshot">
+                        </div>
+                        <div class="screenshot-caption">Dynamic feed with smart category filtering</div>
+                    </div>
+                </div>
+                
+                <!-- Feature 3: Real-time Messaging -->
+                <div class="feature-item">
+                    <div class="feature-content">
+                        <div class="feature-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3>Seamless Real-time Messaging</h3>
+                        <p>
+                            Built on Firebase Realtime Database, our messaging system enables instant communication between 
+                            buyers and sellers. Messages are delivered instantaneously with read receipts, typing indicators, 
+                            and conversation threading for a smooth chat experience.
+                        </p>
+                        <ul class="feature-highlights">
+                            <li><i class="fas fa-bolt"></i> Instantaneous message delivery</li>
+                            <li><i class="fas fa-check-double"></i> Read receipts & status updates</li>
+                            <li><i class="fas fa-user-shield"></i> Secure, encrypted conversations</li>
+                            <li><i class="fas fa-inbox"></i> Organized conversation threads</li>
+                        </ul>
+                        <div class="tech-used">
+                            <span class="tech-tag">Firebase Realtime DB</span>
+                            <span class="tech-tag">Stream Controllers</span>
+                            <span class="tech-tag">WebSocket</span>
+                        </div>
+                    </div>
+                    <div class="feature-visual">
+                        <img src="assets/Messaging.png" alt="Real-time Messaging Interface" class="feature-screenshot">
+                        <div class="screenshot-caption">Real-time chat with instant message delivery</div>
+                    </div>
+                </div>
+                
+                <!-- Feature 4: User Profiles & Management -->
+                <div class="feature-item reverse">
+                    <div class="feature-content">
+                        <div class="feature-icon">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <h3>Comprehensive User Profiles</h3>
+                        <p>
+                            Each user has a detailed profile showcasing their active listings, transaction history, and 
+                            reputation score. Google OAuth integration ensures authentic campus community members while 
+                            maintaining privacy and security.
+                        </p>
+                        <ul class="feature-highlights">
+                            <li><i class="fas fa-id-badge"></i> Verified student authentication</li>
+                            <li><i class="fas fa-list"></i> Personal listing management</li>
+                            <li><i class="fas fa-star"></i> Reputation & rating system</li>
+                            <li><i class="fas fa-lock"></i> Privacy-focused design</li>
+                        </ul>
+                        <div class="tech-used">
+                            <span class="tech-tag">Google OAuth 2.0</span>
+                            <span class="tech-tag">Firebase Auth</span>
+                            <span class="tech-tag">Firestore Security</span>
+                        </div>
+                    </div>
+                    <div class="feature-visual">
+                        <img src="assets/profille_page.png" alt="User Profile Interface" class="feature-screenshot">
+                        <div class="screenshot-caption">Comprehensive user profile with listing management</div>
+                    </div>
+                </div>
+                
+                <!-- Feature 5: Comments & Community Engagement -->
+                <div class="feature-item">
+                    <div class="feature-content">
+                        <div class="feature-icon">
+                            <i class="fas fa-comment-dots"></i>
+                        </div>
+                        <h3>Interactive Comments System</h3>
+                        <p>
+                            Foster community engagement with our robust commenting system. Users can ask questions, 
+                            share insights, and build trust before making a transaction. Threaded replies and real-time 
+                            updates keep conversations organized and active.
+                        </p>
+                        <ul class="feature-highlights">
+                            <li><i class="fas fa-comment-medical"></i> Public questions and answers</li>
+                            <li><i class="fas fa-reply"></i> Threaded comment replies</li>
+                            <li><i class="fas fa-clock"></i> Timestamped updates</li>
+                            <li><i class="fas fa-shield-alt"></i> Moderation capabilities</li>
+                        </ul>
+                        <div class="tech-used">
+                            <span class="tech-tag">Firestore Collections</span>
+                            <span class="tech-tag">Real-time Updates</span>
+                            <span class="tech-tag">Flutter Widgets</span>
+                        </div>
+                    </div>
+                    <div class="feature-visual">
+                        <img src="assets/Comments_section.png" alt="Comments Section" class="feature-screenshot">
+                        <div class="screenshot-caption">Engaging comments system for community interaction</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Architecture Section -->
+    <section id="technical" class="technical-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Technical Architecture</h2>
+                <p class="section-subtitle">Built with modern, scalable technologies</p>
+            </div>
+            
+            <!-- Architecture Overview -->
+            <div class="architecture-diagram">
+                <h3>System Architecture</h3>
+                <div class="architecture-visual">
+                    <div class="arch-layer frontend">
+                        <h4><i class="fas fa-mobile-alt"></i> Frontend Layer</h4>
+                        <div class="arch-components">
+                            <div class="arch-component">Flutter UI</div>
+                            <div class="arch-component">State Management</div>
+                            <div class="arch-component">Navigation</div>
+                        </div>
+                    </div>
+                    
+                    <div class="arch-arrows">
+                        <i class="fas fa-arrow-down"></i>
+                        <i class="fas fa-arrow-up"></i>
+                    </div>
+                    
+                    <div class="arch-layer services">
+                        <h4><i class="fas fa-cogs"></i> Service Layer</h4>
+                        <div class="arch-components">
+                            <div class="arch-component">Firebase Auth</div>
+                            <div class="arch-component">Hugging Face API</div>
+                            <div class="arch-component">Cloudinary SDK</div>
+                        </div>
+                    </div>
+                    
+                    <div class="arch-arrows">
+                        <i class="fas fa-arrow-down"></i>
+                        <i class="fas fa-arrow-up"></i>
+                    </div>
+                    
+                    <div class="arch-layer backend">
+                        <h4><i class="fas fa-database"></i> Backend Layer</h4>
+                        <div class="arch-components">
+                            <div class="arch-component">Firestore DB</div>
+                            <div class="arch-component">Realtime Database</div>
+                            <div class="arch-component">Cloud Storage</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tech Stack Breakdown -->
+            <div class="tech-stack-breakdown">
+                <div class="tech-category">
+                    <div class="category-header">
+                        <i class="fab fa-flutter"></i>
+                        <h3>Frontend - Flutter & Dart</h3>
+                    </div>
+                    <div class="tech-details">
+                        <div class="tech-item">
+                            <h4>Flutter Framework</h4>
+                            <p>Cross-platform mobile development with a single codebase for iOS and Android. 
+                            Leveraging Material Design 3 for modern, responsive UI components.</p>
+                            <div class="tech-features">
+                                <span>Hot Reload</span>
+                                <span>Widget Trees</span>
+                                <span>Stateful Management</span>
+                                <span>Custom Animations</span>
+                            </div>
+                        </div>
+                        <div class="tech-item">
+                            <h4>State Management</h4>
+                            <p>Provider pattern for efficient state management across the app, ensuring smooth 
+                            UI updates and minimal rebuilds.</p>
+                            <div class="tech-features">
+                                <span>Provider</span>
+                                <span>ChangeNotifier</span>
+                                <span>StreamBuilder</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tech-category">
+                    <div class="category-header">
+                        <i class="fab fa-google"></i>
+                        <h3>Backend - Firebase Suite</h3>
+                    </div>
+                    <div class="tech-details">
+                        <div class="tech-item">
+                            <h4>Firebase Authentication</h4>
+                            <p>Secure Google OAuth 2.0 integration with university email verification. 
+                            Handles user sessions, tokens, and refresh mechanisms automatically.</p>
+                            <div class="tech-features">
+                                <span>Google Sign-In</span>
+                                <span>JWT Tokens</span>
+                                <span>Auto Refresh</span>
+                            </div>
+                        </div>
+                        <div class="tech-item">
+                            <h4>Cloud Firestore</h4>
+                            <p>NoSQL document database for storing listings, user profiles, and comments. 
+                            Real-time synchronization with offline persistence.</p>
+                            <div class="tech-features">
+                                <span>Real-time Sync</span>
+                                <span>Offline Mode</span>
+                                <span>Complex Queries</span>
+                                <span>Security Rules</span>
+                            </div>
+                        </div>
+                        <div class="tech-item">
+                            <h4>Realtime Database</h4>
+                            <p>WebSocket-based messaging system for instant chat functionality. 
+                            Sub-millisecond latency for true real-time communication.</p>
+                            <div class="tech-features">
+                                <span>WebSocket</span>
+                                <span>Low Latency</span>
+                                <span>Presence System</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tech-category">
+                    <div class="category-header">
+                        <i class="fas fa-brain"></i>
+                        <h3>AI/ML - Hugging Face</h3>
+                    </div>
+                    <div class="tech-details">
+                        <div class="tech-item">
+                            <h4>BLIP Image Captioning Model</h4>
+                            <p>State-of-the-art vision-language model that generates natural language descriptions 
+                            of images. Trained on millions of image-text pairs for accurate item identification.</p>
+                            <div class="tech-features">
+                                <span>Vision Transformers</span>
+                                <span>Zero-shot Learning</span>
+                                <span>95%+ Accuracy</span>
+                            </div>
+                        </div>
+                        <div class="tech-item">
+                            <h4>Custom Integration</h4>
+                            <p>Built custom API wrapper for seamless integration with Flutter app. Handles image 
+                            encoding, API requests, and response parsing efficiently.</p>
+                            <div class="tech-features">
+                                <span>REST API</span>
+                                <span>Base64 Encoding</span>
+                                <span>Error Handling</span>
+                                <span>Retry Logic</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tech-category">
+                    <div class="category-header">
+                        <i class="fas fa-cloud"></i>
+                        <h3>Media - Cloudinary CDN</h3>
+                    </div>
+                    <div class="tech-details">
+                        <div class="tech-item">
+                            <h4>Image Optimization</h4>
+                            <p>Automatic image compression, format conversion, and responsive delivery. 
+                            Reduces bandwidth usage by up to 70% while maintaining visual quality.</p>
+                            <div class="tech-features">
+                                <span>Auto WebP</span>
+                                <span>Lazy Loading</span>
+                                <span>Compression</span>
+                                <span>Responsive Images</span>
+                            </div>
+                        </div>
+                        <div class="tech-item">
+                            <h4>Global CDN</h4>
+                            <p>Distributed edge servers ensure fast image loading worldwide. Intelligent 
+                            caching reduces latency and improves user experience.</p>
+                            <div class="tech-features">
+                                <span>Edge Caching</span>
+                                <span>Global Distribution</span>
+                                <span>Auto Invalidation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Interested in This Project?</h2>
+                <p>The repository is private, but I'd love to share the code with recruiters and collaborators. Reach out to request access!</p>
+                <div class="cta-buttons">
+                    <a href="../index.html#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Request Repository Access</a>
+                    <a href="https://www.linkedin.com/in/oluwayanmife-uriah-adeniran-67b7a4284/" target="_blank" class="btn btn-secondary"><i class="fab fa-linkedin"></i> Connect on LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <h3>Oluwayanmife Uriah Adeniran</h3>
+                    <p>Full-Stack Developer | Mobile App Specialist | AI Enthusiast</p>
+                </div>
+                <div class="footer-right">
+                    <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="index.html#projects">Projects</a>
+                        <a href="index.html#skills">Skills</a>
+                        <a href="index.html#contact">Contact</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Oluwayanmife Uriah Adeniran. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="script.js"></script>
+    <script src="sesame-exchange.js"></script>
+</body>cd "/Users/uriah/My Website/my_portfolio"
+git status

@@ -133,7 +133,7 @@ const observer = new IntersectionObserver(function(entries) {
 }, observerOptions);
 
 // Observe elements for animation
-document.querySelectorAll('.section-title, .skill-category, .project-card, .about-text, .contact-info').forEach(el => {
+document.querySelectorAll('.section-title, .skill-category, .project-card:not(.featured-project), .about-text, .contact-info').forEach(el => {
     observer.observe(el);
 });
 
@@ -159,15 +159,17 @@ window.addEventListener('scroll', function() {
 });
 
 // Contact Form Handling
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-    // Get form data
-    const formData = new FormData(this);
-    const name = formData.get('name');
-    const email = formData.get('_replyto');
-    const subject = formData.get('subject');
-    const message = formData.get('message');
-    
-    // Simple validation
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        // Get form data
+        const formData = new FormData(this);
+        const name = formData.get('name');
+        const email = formData.get('_replyto');
+        const subject = formData.get('subject');
+        const message = formData.get('message');
+        
+        // Simple validation
     if (!name || !email || !subject || !message) {
         e.preventDefault();
         showNotification('Please fill in all fields', 'error');
@@ -182,7 +184,8 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     
     // Show success message and let form submit naturally to Formspree
     showNotification('Sending message...', 'info');
-});
+    });
+}
 
 // Email validation
 function isValidEmail(email) {
@@ -256,7 +259,7 @@ function animateSkills() {
 animateSkills();
 
 // Project Cards Hover Effects
-document.querySelectorAll('.project-card').forEach(card => {
+document.querySelectorAll('.project-card-link .project-card, .project-card').forEach(card => {
     card.addEventListener('mouseenter', function() {
         this.style.transform = 'translateY(-15px) scale(1.02)';
     });
@@ -265,6 +268,19 @@ document.querySelectorAll('.project-card').forEach(card => {
         this.style.transform = 'translateY(0) scale(1)';
     });
 });
+
+// Make featured project card clickable
+const featuredCard = document.querySelector('.project-card[data-link]');
+if (featuredCard) {
+    featuredCard.style.cursor = 'pointer';
+    featuredCard.addEventListener('click', function(e) {
+        // Don't navigate if clicking on a link inside the card
+        if (e.target.tagName === 'A' || e.target.closest('a')) {
+            return;
+        }
+        window.location.href = this.getAttribute('data-link');
+    });
+}
 
 // Dynamic Statistics Counter
 function animateCounters() {

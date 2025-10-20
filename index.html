@@ -203,6 +203,10 @@
                             <span>Firestore</span>
                         </div>
                         <div class="skill-item">
+                            <i class="fas fa-cloud"></i>
+                            <span>Cloudinary</span>
+                        </div>
+                        <div class="skill-item">
                             <i class="fab fa-google"></i>
                             <span>Google Auth</span>
                         </div>
@@ -210,12 +214,24 @@
                             <i class="fas fa-sync"></i>
                             <span>Real-time Sync</span>
                         </div>
+                        <div class="skill-item">
+                            <i class="fas fa-plug"></i>
+                            <span>REST APIs</span>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="skill-category">
                     <h3><i class="fas fa-brain"></i> AI & Machine Learning</h3>
                     <div class="skill-items">
+                        <div class="skill-item">
+                            <i class="fas fa-robot"></i>
+                            <span>Hugging Face</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-image"></i>
+                            <span>Computer Vision</span>
+                        </div>
                         <div class="skill-item">
                             <i class="fas fa-tree"></i>
                             <span>Random Forest</span>
@@ -239,10 +255,6 @@
                         <div class="skill-item">
                             <i class="fas fa-laptop-code"></i>
                             <span>Jupyter</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-database"></i>
-                            <span>Kaggle Datasets</span>
                         </div>
                     </div>
                 </div>
@@ -274,27 +286,42 @@
 
     <!-- Projects Section -->
     <section id="projects" class="projects">
+        <style>
+            /* NUCLEAR OPTION - Force image visible */
+            .project-card.featured-project .project-image img {
+                opacity: 1 !important;
+                visibility: visible !important;
+                display: block !important;
+                position: relative !important;
+                z-index: 99999 !important;
+            }
+        </style>
         <div class="container">
             <h2 class="section-title">Featured Projects</h2>
             <div class="projects-grid">
-                <div class="project-card">
+                <div class="project-card featured-project" data-link="sesame-exchange.html">
+                    <div class="project-badge-overlay">
+                        <span class="featured-badge"><i class="fas fa-star"></i> Featured Project</span>
+                    </div>
+                    <div class="click-indicator">
+                        <i class="fas fa-mouse-pointer"></i> Click to explore full details
+                    </div>
                     <div class="project-image">
-                        <div class="project-placeholder">
-                            <i class="fas fa-comments"></i>
-                        </div>
+                        <img src="assets/Homescreen.png" alt="Sesame Exchange Homescreen" style="width: 100% !important; height: 100% !important; object-fit: cover !important; opacity: 1 !important;">
                     </div>
                     <div class="project-content">
-                        <h3>Sesame Exchange Shop</h3>
-                        <p>Cross-platform messaging application with real-time chat, user authentication, conversation grouping, and Firebase integration.</p>
+                        <h3>Sesame Exchange Shop <i class="fas fa-arrow-right" style="font-size: 0.8em; margin-left: 0.5rem; color: var(--primary-purple);"></i></h3>
+                        <p>AI-powered campus marketplace leveraging Hugging Face BLIP model for 95%+ accurate image recognition. Features real-time messaging, smart categorization, and Cloudinary CDN for optimized image delivery.</p>
                         <div class="project-tech">
                             <span>Flutter</span>
-                            <span>Dart</span>
                             <span>Firebase</span>
-                            <span>Firestore</span>
+                            <span>Hugging Face AI</span>
+                            <span>Cloudinary</span>
+                            <span>Dart</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/Uriahadeniran09/sesame_exchange_shop" class="project-link" target="_blank"><i class="fab fa-github"></i></a>
-                            <a href="#" class="project-link" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="#contact" class="project-link request-access" onclick="event.stopPropagation();" title="Request Repository Access"><i class="fas fa-lock"></i> Request Access</a>
+                            <a href="sesame-exchange.html" class="project-link view-details" onclick="event.stopPropagation();" title="View Full Project Details"><i class="fas fa-external-link-alt"></i> View Details</a>
                         </div>
                     </div>
                 </div>
