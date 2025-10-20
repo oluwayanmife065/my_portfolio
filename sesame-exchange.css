@@ -2,13 +2,13 @@
 
 /* Project Hero Section */
 .project-hero {
-    min-height: 100vh;
+    min-height: auto;
     display: flex;
     align-items: center;
     position: relative;
     overflow: hidden;
     background: linear-gradient(135deg, var(--dark-black) 0%, var(--light-black) 50%, var(--grey-black) 100%);
-    padding: 120px 0 80px;
+    padding: 100px 0 60px;
 }
 
 .hero-background {
@@ -81,7 +81,7 @@
     color: var(--light-purple);
     font-size: 0.9rem;
     font-weight: 600;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     animation: pulse-badge 2s ease-in-out infinite;
 }
 
@@ -97,15 +97,15 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    margin-bottom: 1rem;
-    line-height: 1.2;
+    margin-bottom: 0.8rem;
+    line-height: 1.1;
 }
 
 .project-tagline {
     font-size: 1.8rem;
     color: var(--text-light);
     font-weight: 600;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
 }
 
 .project-description {
@@ -113,7 +113,7 @@
     color: var(--text-grey);
     line-height: 1.8;
     max-width: 900px;
-    margin: 0 auto 3rem;
+    margin: 0 auto 2.5rem;
 }
 
 /* Tech Badges */
@@ -122,7 +122,7 @@
     justify-content: center;
     gap: 1rem;
     flex-wrap: wrap;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .tech-badge {
@@ -172,7 +172,7 @@
     justify-content: center;
     gap: 1rem;
     flex-wrap: wrap;
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
 }
 
 .btn-large {
@@ -196,14 +196,14 @@
 .quick-stats {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
+    gap: 1.5rem;
     max-width: 900px;
     margin: 0 auto;
 }
 
 .stat {
     text-align: center;
-    padding: 1.5rem;
+    padding: 1.2rem;
     background: rgba(139, 92, 246, 0.1);
     border-radius: 15px;
     border: 1px solid rgba(139, 92, 246, 0.2);
