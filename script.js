@@ -74,10 +74,10 @@ window.addEventListener('scroll', function() {
 function typeWriter() {
     const textElement = document.querySelector('#typing-text');
     const texts = [
-        'Full-Stack Developer',
-        'Cross-Platform Developer', 
-        'Data Science Enthusiast',
-        'Firebase Specialist'
+        'AI / ML Systems Engineer',
+        'RAG & LLM Architect', 
+        'Applied NLP Researcher',
+        'Full-Stack Developer'
     ];
     
     let textIndex = 0;
@@ -269,18 +269,20 @@ document.querySelectorAll('.project-card-link .project-card, .project-card').for
     });
 });
 
-// Make featured project card clickable
-const featuredCard = document.querySelector('.project-card[data-link]');
-if (featuredCard) {
+// Make featured project cards clickable
+document.querySelectorAll('.project-card[data-link]').forEach(featuredCard => {
     featuredCard.style.cursor = 'pointer';
     featuredCard.addEventListener('click', function(e) {
-        // Don't navigate if clicking on a link inside the card
-        if (e.target.tagName === 'A' || e.target.closest('a')) {
+        // Don't navigate if clicking on a link or button inside the card
+        if (e.target.tagName === 'A' || e.target.closest('a') || e.target.tagName === 'BUTTON' || e.target.closest('button')) {
             return;
         }
-        window.location.href = this.getAttribute('data-link');
+        const link = this.getAttribute('data-link');
+        if (link) {
+            window.location.href = link;
+        }
     });
-}
+});
 
 // Dynamic Statistics Counter
 function animateCounters() {
@@ -497,3 +499,123 @@ const glitchCSS = `
 `;
 
 style.textContent += glitchCSS;
+
+// ==========================================================================
+// RAG Assistant Interactive Demo & Modal Controller
+// ==========================================================================
+document.addEventListener('DOMContentLoaded', function() {
+    // 1. RAG Demo Console Query Data
+    const ragQueries = {
+        cfpb: {
+            retriever: 'LanceDB (Embedded Local)',
+            latency: '248ms',
+            score: '0.934',
+            source: 'CFPB 12 CFR Part 1022 §1022.43 (FCRA Subpart E)',
+            chunk: '"Under 12 CFR § 1022.43(e), consumer reporting agencies and furnishers must investigate disputed information within 30 calendar days of receiving consumer notice. The entity must provide written notice of results within 5 business days post-completion."',
+            response: 'According to CFPB regulatory mandates <span class="citation-pill">CFPB 12 CFR §1022.43</span>, credit furnishers must conduct an exhaustive investigation within <strong>30 calendar days</strong> of receiving a consumer dispute notice. Official results must be dispatched within <strong>5 business days</strong> of conclusion. If supplementary consumer evidence is provided during the investigation, an allowable 15-day extension applies pursuant to FCRA § 611(a)(1)(B).'
+        },
+        sec: {
+            retriever: 'Pinecone Serverless (Cloud Index)',
+            latency: '418ms',
+            score: '0.912',
+            source: 'SEC 17 CFR Part 243 §243.100 (Regulation FD)',
+            chunk: '"Rule 100 provides that whenever an issuer discloses material nonpublic information to market professionals or shareholders, the issuer must make simultaneous public disclosure for intentional disclosures, or prompt public disclosure for non-intentional disclosures."',
+            response: 'Under SEC Regulation FD <span class="citation-pill">17 CFR §243.100</span>, issuers are strictly prohibited from selectively leaking material nonpublic information to selected broker-dealers or analysts. For intentional disclosures, broad public dissemination (via Form 8-K or wire release) must be <strong>simultaneous</strong>. Unintentional disclosures trigger mandatory <strong>prompt</strong> disclosure within 24 hours or before next market open.'
+        },
+        fed: {
+            retriever: 'LanceDB (Embedded Local)',
+            latency: '276ms',
+            score: '0.897',
+            source: 'Federal Reserve 12 CFR Part 249 (Regulation WW)',
+            chunk: '"A covered institution must calculate and maintain an amount of high-quality liquid assets (HQLA) that is no less than 100 percent of its total net cash outflows over a 30-calendar day stress period, determined as of each calculation date."',
+            response: 'Pursuant to Federal Reserve Regulation WW <span class="citation-pill">12 CFR Part 249</span>, covered tier-1 banking institutions must maintain a Liquidity Coverage Ratio (LCR) of <strong>≥ 100%</strong>. This requires holding unencumbered High-Quality Liquid Assets (Level 1 cash/sovereign debt and Level 2 securities) sufficient to absorb projected total net cash outflows over a <strong>30-day liquidity stress horizon</strong>.'
+        }
+    };
+
+    // Query Chip Switching
+    const queryButtons = document.querySelectorAll('.query-chip-btn');
+    const retrieverVal = document.getElementById('ragRetrieverVal');
+    const latencyVal = document.getElementById('ragLatencyVal');
+    const sourceVal = document.getElementById('ragSourceVal');
+    const scoreVal = document.getElementById('ragScoreVal');
+    const chunkVal = document.getElementById('ragChunkVal');
+    const responseVal = document.getElementById('ragResponseVal');
+
+    if (queryButtons.length > 0 && responseVal) {
+        queryButtons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const key = this.getAttribute('data-query');
+                if (!ragQueries[key]) return;
+
+                queryButtons.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                // Animate transition
+                const target = ragQueries[key];
+                if (retrieverVal) retrieverVal.textContent = target.retriever;
+                if (latencyVal) latencyVal.textContent = target.latency;
+                if (sourceVal) sourceVal.innerHTML = `<i class="fas fa-bookmark"></i> ${target.source}`;
+                if (scoreVal) scoreVal.textContent = `Cosine: ${target.score}`;
+                if (chunkVal) chunkVal.textContent = target.chunk;
+
+                // Typing streaming effect for LLM response
+                responseVal.innerHTML = '<span style="color: var(--light-purple); font-style: italic;"><i class="fas fa-spinner fa-spin"></i> Generating grounded response with Ollama qwen2.5:7b...</span>';
+                setTimeout(() => {
+                    responseVal.innerHTML = target.response;
+                }, 220);
+            });
+        });
+    }
+
+    // 2. System Specs Modal Controller
+    const openSpecsBtn = document.getElementById('openSpecsModal');
+    const modalBackdrop = document.getElementById('ragSpecsModal');
+    const closeSpecsBtn = document.getElementById('closeSpecsModal');
+
+    if (openSpecsBtn && modalBackdrop) {
+        openSpecsBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            modalBackdrop.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        const closeModal = function() {
+            modalBackdrop.classList.remove('active');
+            document.body.style.overflow = '';
+        };
+
+        if (closeSpecsBtn) {
+            closeSpecsBtn.addEventListener('click', closeModal);
+        }
+
+        modalBackdrop.addEventListener('click', function(e) {
+            if (e.target === modalBackdrop) {
+                closeModal();
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modalBackdrop.classList.contains('active')) {
+                closeModal();
+            }
+        });
+    }
+
+    // Modal Tabs Switching
+    const modalTabs = document.querySelectorAll('.modal-tab-btn');
+    const tabPanes = document.querySelectorAll('.modal-tab-pane');
+
+    modalTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            const targetId = this.getAttribute('data-tab');
+            modalTabs.forEach(t => t.classList.remove('active'));
+            tabPanes.forEach(p => p.classList.remove('active'));
+
+            this.classList.add('active');
+            const targetPane = document.getElementById(targetId);
+            if (targetPane) {
+                targetPane.classList.add('active');
+            }
+        });
+    });
+});
